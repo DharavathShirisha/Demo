@@ -63,7 +63,8 @@
               "browserTarget": "DEMO-APP:build:production"
             },
             "development": {
-              "browserTarget": "DEMO-APP:build:development"
+              "browserTarget": "DEMO-APP:build:development",
+              "port": 4480
             }
           },
           "defaultConfiguration": "development"

@@ -1,0 +1,63 @@
+<p>Emp-Registration-Form Works!</p>
+
+<form [formGroup]=" emp_form_reg" (ngSubmit)="submitData()">
+<p>  First_Name  <input type="text" formControlName="FName" />      First_Name </p>
+
+
+<p style="color:red" *ngIf="emp_form_reg.get('FName')?.errors?.['required'] && (emp_form_reg.get('FName')?.touched || emp_form_reg.get('FName')?.dirty)"> 
+    
+ First Name is Required...
+</p>
+
+
+<p>  <input type="text" formControlName="MName" />    Middle_Name </p>
+
+<p style="color:red" *ngIf="emp_form_reg.get('MName')?.errors?.['required'] && (emp_form_reg.get('MName')?.touched || emp_form_reg.get('MName')?.dirty)"> 
+    
+    Middle Name is Required...
+   </p>
+<p>  <input type="text" formControlName="LName" />    Last_Name </p>
+
+<p style="color:red" *ngIf="emp_form_reg.get('LName')?.errors?.['required'] && (emp_form_reg.get('LName')?.touched || emp_form_reg.get('LName')?.dirty)"> 
+    
+    Last Name is Required...
+   </p>
+<p>  <input type="datetime-local" formControlName="dob" (change)="dobChanged($event)"/> DOB </p>
+<p style="color:red" *ngIf="emp_form_reg.get('dob')?.errors?.['required'] && (emp_form_reg.get('dob')?.touched || emp_form_reg.get('dob')?.dirty)"> 
+    
+    DOB is Required...
+   </p>
+
+<p>  <input type="text" formControlName="age"/> Age </p>
+<p style="color:red" *ngIf="emp_form_reg.get('age')?.errors?.['required'] && (emp_form_reg.get('age')?.touched || emp_form_reg.get('age')?.dirty)"> 
+    
+  Age is Required...
+ </p>
+
+<p>  <input type="radio" name="gender" value="Male" formControlName="gender"/> Male
+   <input type="radio" name="gender" value="Female" formControlName="gender" /> Female </p>
+
+  <p style="color:red" *ngIf="emp_form_reg.get('gender')?.errors?.['required'] && (emp_form_reg.get('gender')?.touched || emp_form_reg.get('gender')?.dirty)"> 
+  
+      Age is Required...
+     </p>
+<p>   <select formControlName="role">
+  <option>
+      Manager
+  </option>
+  <option>
+      Sales
+  </option>
+  <option>
+      HR
+  </option>
+  <option>
+      Admin
+  </option>
+  <option>
+      L&D
+  </option>
+ </select>
+</p>
+<p><button class="btn btn-primary">Save</button></p>
+  </form>

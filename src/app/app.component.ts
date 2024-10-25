@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'DEMO-APP';
 }
+// NavigateToDashBoard(){
+//   this.root.NavigateByUrl("dashboard")
+// }

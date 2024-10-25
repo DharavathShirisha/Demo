@@ -1,0 +1,35 @@
+<p>student-registration works!</p>
+<form [formGroup]="emp_form_reg" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="first_name">First-Name:</label>
+      <p><input type="text" id="first_name" formControlName="first_name"/></p>
+      <div *ngIf="emp_form_reg.get('first_name')?.invalid && (emp_form_reg.get('first_name')?.dirty || emp_form_reg.get('first_name')?.touched)">
+        <div *ngIf="emp_form_reg.get('first_name')?.errors?.['required']">Name is required</div>
+      </div>
+      <label for="middle_name">Middle_Name:</label>
+      <p><input type="text" id="middle_name" formControlName="middle_name"/></p>
+      <div *ngIf="emp_form_reg.get('middle_name')?.invalid && (emp_form_reg.get('middle_name')?.dirty || emp_form_reg.get('middle_name')?.touched)">
+        <div *ngIf="emp_form_reg.get('middle_name')?.errors?.['required']">Name is required</div>
+      </div>
+      <label for="last_name">Last_Name:</label>
+      <p><input type="text" id="last_name" formControlName="last_name"/></p>
+      <div *ngIf="emp_form_reg.get('last_name')?.invalid && (emp_form_reg.get('last_name')?.dirty || emp_form_reg.get('last_name')?.touched)">
+        <div *ngIf="emp_form_reg.get('last_name')?.errors?.['required']">Name is required</div>
+      </div>
+      <label>dob
+      <p><input type="datetime-local" formControlName="dob"  (change)="dobchanged($event)"/></p>
+      <p><input type="text" id="age" formControlName="age"/>age</p></label>
+      <label for="gender">Gender:
+       <input type="radio" name="rdo_1" value="Male"  /> Male
+      <input type="radio" name="rdo_1" value="Female"  />Female </label>
+      <p><label for="role" formControlName="role">Designation:</label>
+        <select>
+            <option >manager</option>
+            <option >Sales</option>
+            <option >HR</option>
+        </select></p>
+    </div>
+    
+    <button type="submit">Submit</button>
+    </form>
+    
